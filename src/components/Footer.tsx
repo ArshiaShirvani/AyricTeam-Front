@@ -1,3 +1,4 @@
+
 import { contactInfo, navLinks } from "@/lib/content";
 import {
   GlobeIcon,
@@ -15,7 +16,9 @@ const socialItems = [
   { Icon: WhatsAppIcon, href: contactInfo.socials.whatsapp, label: "واتساپ" },
 ];
 
-const year = new Date().getFullYear().toLocaleString("fa-IR", { useGrouping: false });
+const year = new Date()
+  .getFullYear()
+  .toLocaleString("fa-IR", { useGrouping: false });
 
 export function Footer() {
   return (
@@ -33,10 +36,17 @@ export function Footer() {
 
           {/* دسترسی سریع */}
           <div>
-            <h3 className="mb-4 text-[14.5px] font-extrabold text-white">دسترسی سریع</h3>
+            <h3 className="mb-4 text-[14.5px] font-extrabold text-white">
+              دسترسی سریع
+            </h3>
+
             <nav className="grid gap-2.5 text-[13px] text-muted">
               {navLinks.map((l) => (
-                <a key={l.href} href={l.href} className="transition-colors hover:text-brand-bright">
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="transition-colors hover:text-brand-bright"
+                >
                   {l.label}
                 </a>
               ))}
@@ -45,7 +55,9 @@ export function Footer() {
 
           {/* اطلاعات تماس */}
           <div>
-            <h3 className="mb-4 text-[14.5px] font-extrabold text-white">تماس با ما</h3>
+            <h3 className="mb-4 text-[14.5px] font-extrabold text-white">
+              تماس با ما
+            </h3>
 
             <a
               href={contactInfo.phone.href}
@@ -91,7 +103,31 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/[0.07] pt-5 text-center text-[12.5px] text-[#7c7c87]">
+        {/* نماد اعتماد الکترونیکی */}
+        <div className="mt-10 flex justify-center border-t border-white/[0.07] pt-8 md:justify-start">
+          <a
+            referrerPolicy="origin"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://trustseal.enamad.ir/?id=8208516&Code=oZ2rf8YnkInvr3ku5oPjocEwACtIYVbv"
+            aria-label="مشاهده نماد اعتماد الکترونیکی آیریک"
+            className="inline-flex items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] p-3 transition-colors hover:border-brand-bright/40"
+          >
+            <img
+              referrerPolicy="origin"
+              src="https://trustseal.enamad.ir/logo.aspx?id=8208516&Code=oZ2rf8YnkInvr3ku5oPjocEwACtIYVbv"
+              alt="نماد اعتماد الکترونیکی"
+              style={{
+                cursor: "pointer",
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
+          </a>
+        </div>
+
+        {/* کپی‌رایت */}
+        <div className="mt-8 border-t border-white/[0.07] pt-5 text-center text-[12.5px] text-[#7c7c87]">
           © {year} Ayric. تمامی حقوق محفوظ است
         </div>
       </div>
